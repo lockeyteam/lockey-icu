@@ -3,3 +3,5 @@
   to = "https://neo.lockey.icu"
   status = 301
   force = true
+  headers = {X-From = "Netlify"}
+  signed = "API_SIGNATURE_TOKEN"
