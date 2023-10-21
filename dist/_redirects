@@ -1,0 +1,5 @@
+/404           /.netlify/functions/entry    200
+/styleguide    /.netlify/functions/entry    200
+/              /.netlify/functions/entry    200
+/_image        /.netlify/functions/entry    200
+/*             /.netlify/functions/entry    404
