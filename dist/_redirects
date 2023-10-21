@@ -1,6 +1,5 @@
 [[redirects]]
   from = "/.well-known/matrix/server/*" 
-  to = "/.well-known/matrix/server/index.html"
-  status = 200
+  to = "https://neo.lockey.icu"
+  status = 301
   force = true
-  headers = {Content-Type = "application/json"}
