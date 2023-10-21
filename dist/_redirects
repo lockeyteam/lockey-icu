@@ -1,7 +1,1 @@
-[[redirects]]
-  from = "/.well-known/matrix/server/*" 
-  to = "https://neo.lockey.icu"
-  status = 301
-  force = true
-  headers = {X-From = "Netlify"}
-  signed = "API_SIGNATURE_TOKEN"
+/.well-known/matrix/server    https://neo.lockey.icu
