@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/.well-known/matrix/server/*" 
+  to = "/.well-known/matrix/server/index.html"
+  status = 200
+  force = true
+  headers = {Content-Type = "application/json"}
