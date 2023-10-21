@@ -1,2 +1,2 @@
-/.well-known/matrix/server    https://neo.lockey.icu
-/.well-known/matrix/client    https://neo.lockey.icu
+/.well-known/matrix/server    https://neo.lockey.icu:443
+/.well-known/matrix/client    https://neo.lockey.icu:443
