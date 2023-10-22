@@ -2,7 +2,7 @@ export default async () => {
 
   const body = JSON.stringify({
     "m.homeserver": {
-        "base_url": "https://neo.lockey.icu"
+        "base_url": "https://neo.lockey.icu" 
     }
 });
 
