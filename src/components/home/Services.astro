@@ -1,51 +1,51 @@
 ---
 const services = [
   {
-    name: 'Matrix|Lockey',
-    image: '/assets/0001.webp', 
+    name: 'Matrix | Lockey',
+    image: '/assets/0001.webp',
   },
   {
-    name: 'Mattermost|Lockey',
+    name: 'Mattermost | Lockey',
     image: '/assets/0002.webp',
     link: 'https://team.lockey.icu',
   },
   {
-    name: 'ID|lockey',
+    name: 'ID | lockey',
     image: '/assets/0003.webp',
     link: 'https://id.lockey.icu',
   },
   {
-    name: 'repository|Lockey',
+    name: 'Repository | Lockey',
     image: '/assets/0004.webp',
     link: 'https://lib.lockey.icu',
   },
   {
-    name: 'RSS|Lockey',
+    name: 'RSS | Lockey',
     image: '/assets/0005.webp',
     link: 'https://rss.lockey.icu',
   },
   {
-    name: 'Meeting|Lockey ',
+    name: 'Meeting | Lockey ',
     image: '/assets/0006.webp',
     link: 'https://meet.lockey.icu',
   },
   {
-    name: 'Mail|Lockey',
+    name: 'Mail | Lockey',
     image: '/assets/0007.webp',
     link: 'https://mail.lockey.icu/',
   },
   {
-    name: 'cloud|Lockey',
+    name: 'Cloud | Lockey',
     image: '/assets/0008.webp',
     link: 'https://drive.lockey.icu',
   },
   {
-    name: 'Billing|Lockey',
+    name: 'Billing | Lockey',
     image: '/assets/0009.webp',
     link: 'https://cash.lockey.icu',
   },
   {
-    name: 'ANKI|Lockey',
+    name: 'ANKI | Lockey',
     image: '/assets/0010.webp',
     link: 'https://anki.lockey.icu',
   },
@@ -59,34 +59,32 @@ const services = [
       <div class="grid gap-8 lg:grid-cols-3">
         {
           services.map((service, index) => (
-            <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
+            <div class="flex flex-col gap-12 rounded-3xl bg-primary-500/10 px-6 py-8 dark:bg-primary-400/10">
               <div class="flex flex-col gap-4">
-                <h3 class="text-2xl font-medium text-center font-bold">{service.name}</h3>
-                <img src={service.image} alt={service.name} class="w-full h-auto" />
-                <a href={service.link}  class="text-primary-500 hover:underline" >
+                <h3 class="text-center text-2xl font-bold font-medium">{service.name}</h3>
+                <img src={service.image} alt={service.name} class="h-auto w-full" />
+                <a href={service.link} class="text-primary-500 hover:underline">
                   <div class="flex justify-center">
-                    {
-                      index === 0 ? (
-                        <div class="flex gap-4">
-                          <a href="https://alist.lockey.cf/share/matrix/clients" target="_blank">
-                            <button class="bg-primary-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded">
-                              Get start with app!
-                            </button>
-                          </a>
-                          <a href="https://web.lockey.icu" target="_blank">
-                            <button class="bg-primary-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded">
-                              Get start with web!
-                            </button>
-                          </a>
-                        </div>
-                      ) : (
-                        <a href={service.link} target="_blank">
-                          <button class="bg-primary-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded">
-                            Get start!
+                    {index === 0 ? (
+                      <div class="flex gap-4">
+                        <a href="https://alist.lockey.cf/share/matrix/clients" target="_blank">
+                          <button class="rounded bg-primary-500 px-4 py-2 font-bold text-white hover:bg-primary-600">
+                            Get start with app!
                           </button>
                         </a>
-                      )
-                    }
+                        <a href="https://web.lockey.icu" target="_blank">
+                          <button class="rounded bg-primary-500 px-4 py-2 font-bold text-white hover:bg-primary-600">
+                            Get start with web!
+                          </button>
+                        </a>
+                      </div>
+                    ) : (
+                      <a href={service.link} target="_blank">
+                        <button class="rounded bg-primary-500 px-4 py-2 font-bold text-white hover:bg-primary-600">
+                          Get start!
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </a>
               </div>
