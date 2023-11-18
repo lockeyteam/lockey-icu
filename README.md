@@ -1,8 +1,10 @@
 # Stone: Astro Theme
 
+> 写在前面：执行 `npm run build` 前，请备份 `dist/netlify` 文件夹，执行之后将该文件夹重新复制到原位置，再进行 `git push` 。
+
 Stone is a free and open-source Astro theme specially designed for Business, Marketing, SaaS and Startup websites.
 
-## Key Features:
+## Key Features
 
 - **Built with Tailwind CSS & Alpine.js**
 - **5+ Pages**
@@ -42,7 +44,7 @@ Once the installation is done, you can now run your app:
 npm run dev
 ```
 
-This runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+This runs the app in development mode. Open <http://localhost:3000> to view it in the browser.
 
 ### Build
 
