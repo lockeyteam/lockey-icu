@@ -3,32 +3,27 @@ const features = [
   {
     id: 'expertise-1',
     name: '协作',
-    description:
-      '我们相互合作，了解实际的需求，并共同开发定制的解决方案。',
+    description: '我们相互合作，了解实际的需求，并共同开发定制的解决方案。',
   },
   {
     id: 'expertise-2',
     name: '创造',
-    description:
-      '我们秉持创新精神，不断探索新的技术和方法，以为客户提供最佳解决方案。',
+    description: '我们秉持创新精神，不断探索新的技术和方法，为客户提供最佳解决方案。',
   },
   {
     id: 'expertise-3',
     name: '专业',
-    description:
-      '我们拥有一支专业的团队，深谙相关领域的专业知识，提供卓越的服务。',
+    description: '我们拥有一支专业的团队，深谙相关领域的专业知识，提供卓越的服务。',
   },
   {
     id: 'expertise-4',
     name: '民主',
-    description:
-      '人人参与其中，在团队中参与团队的民主活动。',
+    description: '人人参与其中，在团队中参与团队的民主活动。',
   },
   {
     id: 'expertise-5',
     name: '教培',
-    description:
-      '知识库支持，帮助您更好地理解和应用相关技术。',
+    description: '知识库支持，帮助您更好地理解和应用相关技术。',
   },
 ];
 ---
@@ -62,11 +57,11 @@ const features = [
                     aria-expanded="false"
                     x-bind:aria-expanded="isOpen.toString()"
                   >
-                    <div class="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
-                      <span class="font-medium font-bold">{feature.name}</span>
+                    <div class="flex items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200">
+                      <span class="font-bold font-medium">{feature.name}</span>
                       <span class="ml-6 flex h-7 items-center">
                         <svg
-                          class="text-primary-600 dark:text-primary-400 h-6 w-6 rotate-0 transform transition duration-200 ease-in-out"
+                          class="h-6 w-6 rotate-0 transform text-primary-600 transition duration-200 ease-in-out dark:text-primary-400"
                           x-bind:class="{ '-rotate-180': isOpen, 'rotate-0': !isOpen }"
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
@@ -80,11 +75,16 @@ const features = [
                   </button>
                 </dt>
                 <dd class="pb-6 pr-6" id={feature.id} x-show="isOpen" x-cloak x-collapse>
-                  <p class="text-primary-950/70 dark:text-primary-200/70 text-base">
+                  <p class="text-base text-primary-950/70 dark:text-primary-200/70">
                     {feature.description}
                   </p>
                 </dd>
               </div>
             ))
           }
-        </
+           </
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
