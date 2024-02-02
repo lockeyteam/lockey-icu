@@ -31,7 +31,7 @@ const bottomLinks = [
         <p class="text-primary-950/70 dark:text-primary-200/70 text-base">
           在数字世界中，我们是技术伙伴，致力于解锁潜在的无限可能性。就像钥匙能打开锁一样，我们的技术将打开新的机会，解决问题，实现目标。
         </p>
-        <p class="text-primary-950/70 dark:text-primary-200/70 text-sm">© 2023 Lockey</p>
+        <p id="copyright" class="text-primary-950/70 dark:text-primary-200/70 text-sm">© 2023 Lockey</p>
       </div>
 
       <!-- Bottom links -->
@@ -72,3 +72,15 @@ const bottomLinks = [
     </div>
   </div>
 </footer>
+<script>
+  function updateCopyrightYear() {
+    const startYear = 2023;
+    const currentYear = new Date().getFullYear();
+    const yearText = startYear === currentYear ? `${startYear}` : `${startYear}-${currentYear}`;
+    document.getElementById('copyright').innerHTML = `© ${yearText} Lockey`;
+  }
+  // Run the function when the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    updateCopyrightYear();
+  });
+</script>
