@@ -1,0 +1,76 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+import Layout from '../layouts/Layout.astro';
+
+const clientsDir = './json';
+const clients = [];
+
+for (const file of fs.readdirSync(clientsDir)) {
+  if (file.endsWith('-cid.json')) {
+    const jsonData = JSON.parse(fs.readFileSync(path.join(clientsDir, file), 'utf-8'));
+    const clientName = file.replace('-cid.json', '');
+    const { name, cid, version } = jsonData.latest;
+    const downloadUrl = `https://gateway.pinata.cloud/ipfs/${cid}/${name}`;
+
+    clients.push({
+      name,
+      version,
+      downloadUrl,
+      clientName
+    });
+  }
+}
+---
+
+<html>
+
+<Layout
+  description="Matrix-Clients"
+  title="Matrix-Clients"
+>
+  <head>
+    <title>Matrix Clients Downloads</title>
+
+    <style>
+      :root {
+        --primary-color: #58ADFB; /* 主要颜色，可根据 Material You 设计自定义 */
+      }
+      .client-box {
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 18px;
+        margin-bottom: 10px;
+      }
+      .download-btn {
+        background-color: var(--primary-color); /* 使用主要颜色 */
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .download-btn:hover {
+        background-color: #055EB4; /* 鼠标悬停时的颜色 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Matrix Clients Downloads</h1>
+    
+    {clients.map(client => (
+      <div class="client-box">
+        <h2>{client.name} ({client.version})</h2>
+        <p><a href={client.downloadUrl} class="download-btn" target="_blank">Download </a></p>
+      </div>
+    ))}
+  </body>
+</html>

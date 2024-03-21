@@ -1,0 +1,40 @@
+name: Update Clients
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '21'
+            - name: Update SchildiChat Desktop
+              run: |
+                bash schildichat-desktop-update.sh
+              shell: bash
+              env:
+                NFT_APIKEY: ${{ secrets.NFT_APIKEY }}
+            - name: Update SchildiChat Android
+              run: |
+                bash schildichat-android-update.sh
+              shell: bash
+              env:
+                NFT_APIKEY: ${{ secrets.NFT_APIKEY }}
+            - name: Commit and push changes
+              run: |
+                git config --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+                git add .
+                git commit -m "Update Clients"
+                git push
+              shell: bash
