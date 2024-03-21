@@ -1,24 +1,13 @@
-# Stone: Astro Theme
 
-> 写在前面：执行 `npm run build` 前，请备份 `dist/netlify` 文件夹，执行之后将该文件夹重新复制到原位置，再进行 `git push` 。
+> 此仓库存放 https://lkt.icu 的源代码，使用 nft.storage 进行持续集成&交付 Matrix-Clients
 
-Stone is a free and open-source Astro theme specially designed for Business, Marketing, SaaS and Startup websites.
 
-## Key Features
+---
 
-- **Built with Tailwind CSS & Alpine.js**
-- **5+ Pages**
-- **15+ Sections**
-- Clean & Modern Design
-- Fully Responsive
-- Dark & Light Mode
-- Fast & Performant
-- Super Lightweight
-- View Transitions (experimental)
-- **Prettier** Code Formatter
-- **Google Fonts**
-- **Remix Icons**
-- Free Updates
+## Based on:
+
+**Stone: Astro Theme**
+https://github.com/m6v3l9/astro-theme-stone
 
 ## Getting Started
 
