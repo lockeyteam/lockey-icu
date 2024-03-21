@@ -114,7 +114,7 @@ for file in *.car; do
     esac
 
     # 将 cid 写入到指定的 .cid 文件中
-    mkdir -p cid /public/json
+    mkdir -p cid json
     echo "$cid" > "cid/$filename.cid"
 
     echo "Waiting for 3 seconds..."
@@ -128,18 +128,18 @@ for file in *.car; do
         '{name: $name, cid: $cid, version: $version}')
 
     # 如果 JSON 文件不存在，则创建一个新的 JSON 文件
-    if [ ! -f "/public/json/$filename-cid.json" ]; then
-        echo '{"versions": [], "latest": {"name": "", "cid": "", "version": "latest"}}' > "/public/json/$filename-cid.json"
+    if [ ! -f "json/$filename-cid.json" ]; then
+        echo '{"versions": [], "latest": {"name": "", "cid": "", "version": "latest"}}' > "json/$filename-cid.json"
     fi
 
     # 读取原有的 JSON 数据
-    old_json_data=$(cat "/public/json/$filename-cid.json")
+    old_json_data=$(cat "json/$filename-cid.json")
 
     # 将新的 JSON 数据添加到 "versions" 数组中，并更新 "latest" 字段
     new_json_data=$(echo "$old_json_data" | jq -c --argjson new_data "$json_data" '.versions += [$new_data] | .latest.name = $new_data.name | .latest.cid = $new_data.cid')
 
     # 将新的 JSON 数据写入到 JSON 文件中
-    echo "$new_json_data" > "/public/json/$filename-cid.json"
+    echo "$new_json_data" > "json/$filename-cid.json"
 done
 
 rm -rf *.car
